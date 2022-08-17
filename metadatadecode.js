@@ -7,11 +7,6 @@ window.onload = function(){
     //ログインボタンを表示し、メタデータをデコードする画面を非表示
     document.getElementById('login').style.visibility = 'visible';
     document.getElementById('metadatadecoded').style.visibility = 'hidden';
-
-    console.log(document.getElementById('login').style.visibility);
-    console.log(document.getElementById('metadatadecoded').style.visibility);
-
-    alert('AAA');
 }
 
 async function loadAccount(){
