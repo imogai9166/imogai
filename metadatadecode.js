@@ -5,9 +5,17 @@ symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
 async function loadAccount(){
     if(!window.SSS){
+        //ログインボタンを表示し、メタデータをデコードする画面を非表示
+        document.getElementById('login').style.visibility = 'hidden';
+        document.getElementById('metadatadecoded').style.visibility = 'visible';
+
         console.log('SSS Extension not installed');
         alert('SSS Extension not installed');
     }else{
+        //ログインボタンを非表示にし、メタデータをデコードする画面を表示
+        document.getElementById('login').style.visibility = 'hidden';
+        document.getElementById('metadatadecoded').style.visibility = 'visible';
+
         //アドレスからアカウント（AccountInfo）復元
         address = symbol_sdk_1.Address.createFromRawAddress(window.SSS.activeAddress);
         var getAccountInfo = async function()

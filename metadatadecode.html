@@ -12,27 +12,29 @@
 <body>
 <H1>MosaicIdからMetadataをデコード</H1>
 <br />
-<p>
-    <label for="mosaicid">MosaicIdを選択してください</label>
-</p>
-<p>
-    <!-- <input type="text" name="mosaicid" id="mosaicid" value=""></input> -->
-    <select name="mosaicid" id="mosaicid">
-    </select>
-    <input type="submit" id="decode" value="デコード" onclick="decodeMetadataFromMosaicId();"></input>
-</p>
-<br />
-<p>
-    <label for="decodedmetadata">コピペして使ってね！</label>
-</p>
-<p>
-    <input type="text" name="decodedmetadata" id="decodedmetadata" size="100" value=""></input>
-</p>
-<p>
-    <label for="error" id="errormessage"></label>
-</p>
-<script>
-    loadAccount();
-</script>
+<div id="login">
+    <input type="submit" id="login" value="ログイン" onclick="loadAccount();"></input>
+</div>
+<div id="metadatadecoded">
+    <p>
+        <label for="mosaicid">MosaicIdを選択してください</label>
+    </p>
+    <p>
+        <!-- <input type="text" name="mosaicid" id="mosaicid" value=""></input> -->
+        <select name="mosaicid" id="mosaicid">
+        </select>
+        <input type="submit" id="decode" value="デコード" onclick="decodeMetadataFromMosaicId();"></input>
+    </p>
+    <br />
+    <p>
+        <label for="decodedmetadata">コピペして使ってね！</label>
+    </p>
+    <p>
+        <input type="text" name="decodedmetadata" id="decodedmetadata" size="100" value=""></input>
+    </p>
+    <p>
+        <label for="error" id="errormessage"></label>
+    </p>
+</div>
 </body>
 </html>
