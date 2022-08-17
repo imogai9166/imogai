@@ -61,7 +61,7 @@ async function loadAccount(){
 async function decodeMetadataFromMosaicId(){
     
     // replace with mosaic id
-    const mosaicIdHex = document.getElementById("mosaicid").value;
+    const mosaicIdHex = document.getElementById("mosaicIdList").value;
     const mosaicId = new symbol_sdk_1.MosaicId(mosaicIdHex);
 
     // replace with node endpoint
