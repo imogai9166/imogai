@@ -34,7 +34,7 @@ if(!window.SSS){
         option.textContent = text;
 
         //select要素にoption要素を追加する
-        selectMosaicId.appendChild(option)
+        selectMosaicId.appendChild(option);
     }
 }
 
