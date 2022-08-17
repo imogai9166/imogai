@@ -28,6 +28,10 @@ async function loadAccount(){
         {
             return new Promise((resolve, reject) => 
             {
+                const d2 = $.Deferred();
+                const repositoryFactory = await createRepo(d2,nodelist);
+                accountHttp = repositoryFactory.createAccountRepository();
+
                 accountHttp.getAccountInfo(address).subscribe(function(accountInfo)
                 {
                     resolve(accountInfo);
