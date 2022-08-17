@@ -3,6 +3,8 @@ var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
+alert('AAA');
+
 if(!window.SSS){
     console.log('SSS Extension not installed');
     alert('SSS Extension not installed');
@@ -28,13 +30,13 @@ if(!window.SSS){
         text = accountInfo.mosaics[i].id.toHex();
 
         //option要素を新しく作る
-        option = document.createElement('option');
+        option1 = document.createElement('option');
         //option要素にvalueと表示名を設定
-        option.value = text;
-        option.textContent = text;
+        option1.value = text;
+        option1.textContent = text;
 
         //select要素にoption要素を追加する
-        selectMosaicId.appendChild(option);
+        selectMosaicId.appendChild(option1);
     }
 }
 
