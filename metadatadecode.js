@@ -37,7 +37,7 @@ async function loadAccount(){
         var accountInfo = await getAccountInfo();
     
         //select要素を取得する
-        selectMosaicId = document.getElementById('mosaicid');
+        mosaicIdList = document.getElementById('mosaicIdList');
         for(i = 0 ; i < accountInfo.mosaics.length ; i++){
     
             text = accountInfo.mosaics[i].id.toHex();
@@ -49,7 +49,7 @@ async function loadAccount(){
             option1.textContent = text;
     
             //select要素にoption要素を追加する
-            selectMosaicId.appendChild(option1);
+            mosaicIdList.appendChild(option1);
         }
     }
 }
