@@ -3,11 +3,17 @@ var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
+window.onload = function(){
+    //ログインボタンを表示し、メタデータをデコードする画面を非表示
+    document.getElementById('login').style.visibility = 'visible';
+    document.getElementById('metadatadecoded').style.visibility = 'hidden';
+}
+
 async function loadAccount(){
     if(!window.SSS){
         //ログインボタンを表示し、メタデータをデコードする画面を非表示
-        document.getElementById('login').style.visibility = 'hidden';
-        document.getElementById('metadatadecoded').style.visibility = 'visible';
+        document.getElementById('login').style.visibility = 'visible';
+        document.getElementById('metadatadecoded').style.visibility = 'hidden';
 
         console.log('SSS Extension not installed');
         alert('SSS Extension not installed');
