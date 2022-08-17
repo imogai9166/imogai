@@ -24,12 +24,12 @@ async function loadAccount(){
 
         //アドレスからアカウント（AccountInfo）復元
         address = symbol_sdk_1.Address.createFromRawAddress(window.SSS.activeAddress);
+        const d2 = $.Deferred();
+        const repositoryFactory = await createRepo(d2,nodelist);
         var getAccountInfo = async function()
         {
             return new Promise((resolve, reject) => 
             {
-                const d2 = $.Deferred();
-                const repositoryFactory = await createRepo(d2,nodelist);
                 accountHttp = repositoryFactory.createAccountRepository();
 
                 accountHttp.getAccountInfo(address).subscribe(function(accountInfo)
