@@ -3,7 +3,7 @@ var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
-function loadAccount(){
+async function loadAccount(){
     if(!window.SSS){
         console.log('SSS Extension not installed');
         alert('SSS Extension not installed');
