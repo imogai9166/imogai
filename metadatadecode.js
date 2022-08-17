@@ -3,40 +3,40 @@ var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
-alert('AAA');
-
-if(!window.SSS){
-    console.log('SSS Extension not installed');
-    alert('SSS Extension not installed');
-}else{
-    //アドレスからアカウント（AccountInfo）復元
-    address = symbol_sdk_1.Address.createFromRawAddress(window.SSS.activeAddress);
-    var getAccountInfo = async function()
-    {
-        return new Promise((resolve, reject) => 
+window.onload = function(){
+    if(!window.SSS){
+        console.log('SSS Extension not installed');
+        alert('SSS Extension not installed');
+    }else{
+        //アドレスからアカウント（AccountInfo）復元
+        address = symbol_sdk_1.Address.createFromRawAddress(window.SSS.activeAddress);
+        var getAccountInfo = async function()
         {
-            accountHttp.getAccountInfo(address).subscribe(function(accountInfo)
+            return new Promise((resolve, reject) => 
             {
-                resolve(accountInfo);
-            }, err => console.error(err));
-        });
-    }
-    var accountInfo = await getAccountInfo();
-
-    //select要素を取得する
-    selectMosaicId = document.getElementById('mosaicid');
-    for(i = 0 ; i < accountInfo.mosaics.length ; i++){
-
-        text = accountInfo.mosaics[i].id.toHex();
-
-        //option要素を新しく作る
-        option1 = document.createElement('option');
-        //option要素にvalueと表示名を設定
-        option1.value = text;
-        option1.textContent = text;
-
-        //select要素にoption要素を追加する
-        selectMosaicId.appendChild(option1);
+                accountHttp.getAccountInfo(address).subscribe(function(accountInfo)
+                {
+                    resolve(accountInfo);
+                }, err => console.error(err));
+            });
+        }
+        var accountInfo = await getAccountInfo();
+    
+        //select要素を取得する
+        selectMosaicId = document.getElementById('mosaicid');
+        for(i = 0 ; i < accountInfo.mosaics.length ; i++){
+    
+            text = accountInfo.mosaics[i].id.toHex();
+    
+            //option要素を新しく作る
+            option1 = document.createElement('option');
+            //option要素にvalueと表示名を設定
+            option1.value = text;
+            option1.textContent = text;
+    
+            //select要素にoption要素を追加する
+            selectMosaicId.appendChild(option1);
+        }
     }
 }
 
