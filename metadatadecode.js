@@ -1,5 +1,5 @@
-//var nodelist = NODES;
-var nodelist = TEST_NODES;
+var nodelist = NODES;
+//var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
@@ -78,7 +78,8 @@ async function decodeMetadataFromMosaicId(){
                 console.log('Page', metadataEntries.pageNumber);
                 metadataEntries.data.map((entry) => {
                     const metadataEntry = entry.metadataEntry;
-                    document.getElementById("decodedmetadata").value=symbol_sdk_1.Convert.decodeHex(metadataEntry.value);
+                    //document.getElementById("decodedmetadata").value=symbol_sdk_1.Convert.decodeHex(metadataEntry.value);
+                    document.getElementById("decodedmetadata").value=metadataEntry.value;
 
                     console.log('\n Decoded Value:\t', symbol_sdk_1.Convert.decodeHex(metadataEntry.value));
                     console.log('\n \n Key:\t', metadataEntry.scopedMetadataKey);
