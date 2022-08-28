@@ -1,5 +1,5 @@
-var nodelist = NODES;
-//var nodelist = TEST_NODES;
+//var nodelist = NODES;
+var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
@@ -63,14 +63,6 @@ async function decodeMetadataFromMosaicId(){
     // replace with mosaic id
     const mosaicIdHex = document.getElementById("mosaicIdList").value;
     const mosaicId = new symbol_sdk_1.MosaicId(mosaicIdHex);
-
-    // replace with node endpoint
-    //const nodeUrl = 'https://sym-test.opening-line.jp:3001';
-    //const repositoryFactory = new symbol_sdk_1.RepositoryFactoryHttp(nodeUrl, symbol_sdk_1.NetworkType.TEST_NET);
-
-    /*const d = $.Deferred();
-    const node = await connectNode(nodelist, d);
-    const repositoryFactory = new symbol_sdk_1.RepositoryFactoryHttp(node);*/
     
     const d2 = $.Deferred();
     const repositoryFactory = await createRepo(d2,nodelist);
