@@ -1,5 +1,5 @@
-//var nodelist = NODES;
-var nodelist = TEST_NODES;
+var nodelist = NODES;
+//var nodelist = TEST_NODES;
 
 symbol_sdk_1 = require("/node_modules/symbol-sdk");
 
